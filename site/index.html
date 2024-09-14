@@ -2,11 +2,27 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <title>Bobo Patch - Réparation textile et création</title>
-
         <!-- REMOVE -->
         <script type="text/javascript" src="https://livejs.com/live.js"></script>
 
+        <script type="module">
+            import PhotoSwipeLightbox from './photoswipe-lightbox.esm.min.js';
+            import PhotoSwipe from './photoswipe.esm.min.js';
+            document.addEventListener("DOMContentLoaded", () => {
+
+            const lightbox = new PhotoSwipeLightbox({
+            gallery: '#gallery--no-dynamic-import',
+            children: 'a',
+            pswpModule: PhotoSwipe
+            });
+
+            lightbox.init();
+            });
+        </script>
+        <link href="photoswipe.css" rel="stylesheet"/>
         <style>
 
             body {
@@ -29,19 +45,9 @@
                 align-items: center;
             }
 
-            #logo-wrap::after {
-                box-shadow: inset 0 0 20px #8bbacb;
-                content: '';
-                display: block;
-                height: 200px;
-                position: absolute;
-                top: 0;
-                width: 200px;
-            }
             #logo {
-                max-height: 200px;
-                /*                box-shadow: inset 20px 20px 20px 20px black;*/
-
+                margin-left: 2rem;
+                max-height: 100%;
             }
 
 
@@ -62,14 +68,20 @@
             ol > li + li {
                 margin-top: 1rem;
             }
+
+            .thumbnail {
+                width: 150px;
+            }
+
+            .pswp-a {
+                text-decoration: none;
+            }
         </style>
     </head>
     <body>
         <div id="container">
             <div id="banner">
-                <div id="logo-wrap">
-                    <img id="logo" src="img/bobo-patch.webp" alt="TODO TODO"/>
-                </div>
+                <img id="logo" src="img/bobo-patch.webp" alt="TODO TODO"/>
                 <span id="banner-text">BOBO PATCH</span>
             </div>
             <div id="content">
@@ -97,6 +109,56 @@
                 </ol>
                 <br>
                 <h2>Quelques exemples de réparation</h2>
+                <div class="pswp-gallery pswp-gallery--single-column" id="gallery--no-dynamic-import">
+                    <!--data-pswp-width="1669"-->
+                    <!--data-pswp-height="2500"-->
+                    <a href="img/1_doublure_dechirure.jpg"
+                       data-pswp-height="4160"
+                       data-pswp-width="3120"
+                       class="pswp-a"
+                       target="_blank">
+                        <!-- thumbnail -->
+                        <img src="img/1_doublure_dechirure.jpg" alt="" class="thumbnail"/>
+                    </a>
+                    <!-- cropped thumbnail: -->
+                    <a href="img/2_doublure_reparee.jpg"
+                       data-pswp-height="4160"
+                       data-pswp-width="3120"
+                       data-cropped="true"
+                       class="pswp-a"
+                       target="_blank">
+                        <img src="img/2_doublure_reparee.jpg" alt="" class="thumbnail"/>
+                    </a>
+                    <!-- data-pswp-src with custom URL in href -->
+                    <a href="img/3_jean_trou.jpg"
+                       data-pswp-height="4160"
+                       data-pswp-width="3120"
+                       class="pswp-a"
+                       target="_blank">
+                        <img src="img/3_jean_trou.jpg" alt="" class="thumbnail"/>
+                    </a>
+                    <a href="img/4_jean_repare.jpg"
+                       data-pswp-height="4160"
+                       data-pswp-width="3120"
+                       class="pswp-a"
+                       target="_blank">
+                        <img src="img/4_jean_repare.jpg" alt="" class="thumbnail"/>
+                    </a>
+                    <a href="img/5_short_trou.jpg"
+                       data-pswp-height="4160"
+                       data-pswp-width="3120"
+                       class="pswp-a"
+                       target="_blank">
+                        <img src="img/5_short_trou.jpg" alt="" class="thumbnail"/>
+                    </a>
+                    <a href="img/6_short_repare.jpg"
+                       data-pswp-height="4160"
+                       data-pswp-width="3120"
+                       class="pswp-a"
+                       target="_blank">
+                        <img src="img/6_short_repare.jpg" alt="" class="thumbnail"/>
+                    </a>
+                </div>
             </div>
         </div>
     </body>
