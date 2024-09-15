@@ -35,7 +35,7 @@
             }
 
             #banner {
-                background-color: #8bbacb;
+                background-color: #8dbcce;
                 height: 200px;
                 display: flex;
                 flex-flow: row;
@@ -43,18 +43,30 @@
                 align-items: center;
             }
 
-            #logo {
-                margin-left: 2rem;
-                max-height: 100%;
-            }
-
-
-            #banner-text {
-                font-size: 3rem;
-                color: black;
+            a {
+                color: #47a0c2;
+                cursor: pointer;
                 font-weight: bold;
-                margin-left: 2rem;
+                text-decoration: none;
+
+                &:hover {
+                    color: #22bbf5;
+                }
             }
+
+            #logo {
+                margin: auto;
+                height: 200px;
+                width: 478px;
+                background-image: url("img/bobo-patch-banner.png");
+                background-size: contain;
+
+                @media(max-width: 478px) {
+                    width: 200px;
+                    background-image: url("img/bobo-patch-clean.png");
+                }
+            }
+
 
             #content {
                 margin-top: 2rem;
@@ -82,14 +94,13 @@
     </head>
     <body>
         <div id="container">
-            <div id="banner">
-                <img id="logo" src="img/bobo-patch.webp" alt="TODO TODO"/>
-                <span id="banner-text">BOBO PATCH</span>
+            <div id="banner" aria-hidden=true>
+                <div id="logo"></div>
             </div>
             <div id="content">
                 <h2>Faire réparer vos vêtemens préférés</h2>
                 <ol>
-                    <li>Envoyez un mail à bobo-patch@garnier.wf, avec une description simple
+                    <li>Envoyez un mail à <a href="mailto:bobo-patch@garnier.wf">bobo-patch@garnier.wf</a>, avec une description simple
                         du vêtement à réparer, ainsi qu'une photo.</li>
                     <li>Je vous réponds en envoyant une estimation du prix.</li>
                     <li>Nous convenons d'un rendez-vous.</li>
@@ -103,50 +114,50 @@
                     <!--data-pswp-width="1669"-->
                     <!--data-pswp-height="2500"-->
                     <a href="img/1_doublure_dechirure.jpg"
-                       data-pswp-height="4160"
-                       data-pswp-width="3120"
+                       data-pswp-height="1024"
+                       data-pswp-width="768"
                        class="pswp-a"
                        target="_blank">
                         <!-- thumbnail -->
-                        <img src="img/1_doublure_dechirure.jpg" alt="" class="thumbnail"/>
+                        <img src="img/1_doublure_dechirure_small.jpg" alt="image de doublure de manteau déchirée" class="thumbnail"/>
                     </a>
                     <!-- cropped thumbnail: -->
                     <a href="img/2_doublure_reparee.jpg"
-                       data-pswp-height="4160"
-                       data-pswp-width="3120"
+                       data-pswp-height="1024"
+                       data-pswp-width="768"
                        data-cropped="true"
                        class="pswp-a"
                        target="_blank">
-                        <img src="img/2_doublure_reparee.jpg" alt="" class="thumbnail"/>
+                        <img src="img/2_doublure_reparee_small.jpg" alt="image de doublure de manteau réparée" class="thumbnail"/>
                     </a>
                     <!-- data-pswp-src with custom URL in href -->
                     <a href="img/3_jean_trou.jpg"
-                       data-pswp-height="4160"
-                       data-pswp-width="3120"
+                       data-pswp-height="1024"
+                       data-pswp-width="768"
                        class="pswp-a"
                        target="_blank">
-                        <img src="img/3_jean_trou.jpg" alt="" class="thumbnail"/>
+                        <img src="img/3_jean_trou_small.jpg" alt="image de jean troué à l'entrejambe" class="thumbnail"/>
                     </a>
                     <a href="img/4_jean_repare.jpg"
-                       data-pswp-height="4160"
-                       data-pswp-width="3120"
+                       data-pswp-height="1024"
+                       data-pswp-width="768"
                        class="pswp-a"
                        target="_blank">
-                        <img src="img/4_jean_repare.jpg" alt="" class="thumbnail"/>
+                        <img src="img/4_jean_repare_small.jpg" alt="image de jean avec réparation à l'entrejambe" class="thumbnail"/>
                     </a>
                     <a href="img/5_short_trou.jpg"
-                       data-pswp-height="4160"
-                       data-pswp-width="3120"
+                       data-pswp-height="1024"
+                       data-pswp-width="768"
                        class="pswp-a"
                        target="_blank">
-                        <img src="img/5_short_trou.jpg" alt="" class="thumbnail"/>
+                        <img src="img/5_short_trou_small.jpg" alt="image de short troué au niveau de l'ourlet" class="thumbnail"/>
                     </a>
                     <a href="img/6_short_repare.jpg"
-                       data-pswp-height="4160"
-                       data-pswp-width="3120"
+                       data-pswp-height="1024"
+                       data-pswp-width="768"
                        class="pswp-a"
                        target="_blank">
-                        <img src="img/6_short_repare.jpg" alt="" class="thumbnail"/>
+                        <img src="img/6_short_repare_small.jpg" alt="image de short avec réparation invisible de l'ourlet" class="thumbnail"/>
                     </a>
                 </div>
                 <h2>À propos</h2>
