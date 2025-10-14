@@ -39,18 +39,53 @@
                 line-height: 1.25em;
             }
 
-            #container {
-                max-width: 800px;
-                margin: auto;
-            }
-
             #banner {
-                background-color: #8dbcce;
-                height: 200px;
-                display: flex;
-                flex-flow: row;
-                justify-content: flex-start;
-                align-items: center;
+                background-color: #cea8f0;
+                height: 120px;
+
+                #banner-content {
+                    padding: 10px;
+                    max-width: 60rem;
+                    margin:  0 auto;
+                    display: flex;
+                    flex-flow: row;
+                    align-items: center;
+                    justify-content: space-between;
+
+
+                    & > img {
+                        height: 100px;
+
+                        /* TODO: fix mobile*/
+                        @media(max-width: 478px) {
+                            height: auto;
+                            width: 100px;
+                        }
+
+                    }
+
+                    & > nav {
+                        margin-right: 20px;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+
+                        /* TODO: fix mobile */
+                        & > ul {
+                            list-style-type: none;
+
+                            & > li {
+                                display: inline-block;
+                            }
+
+                            & > li + li {
+                                margin-left: 1rem;
+                            }
+                        }
+
+                    }
+
+                }
+
             }
 
             a {
@@ -64,25 +99,14 @@
                 }
             }
 
-            #logo {
-                margin: auto;
-                height: 200px;
-                width: 478px;
-                background-image: url("img/bobo-patch-banner.png");
-                background-size: contain;
-
-                @media(max-width: 478px) {
-                    width: 200px;
-                    background-image: url("img/bobo-patch-clean.png");
-                }
+            #content {
+                margin: 2rem auto;
+                max-width: 60rem;
             }
 
-
-            #content {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-                padding: 0 2rem;
-
+            #photo-accueil {
+                margin-left: 20px;
+                max-height: 300px;
             }
 
             ol > li + li {
@@ -100,21 +124,60 @@
             .justify {
                 text-align: justify;
             }
+
+            .line {
+                display: flex;
+                flex-flow: row;
+
+                &.space-between {
+                    justify-content: space-between;
+                }
+            }
+
+            .column {
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: start;
+            }
+
+            button.big {
+                font-size: 1.5rem;
+                padding: 1rem 2rem;
+                background-color: #cea8f0;
+                border: none;
+            }
+
+            img.rounded {
+                border-radius: 20px;
+            }
         </style>
     </head>
     <body>
         <div id="container">
             <div id="banner" aria-hidden=true>
-                <div id="logo"></div>
+                <div id="banner-content">
+                    <img src="img/logo-bobopatch-bg.png" alt="Logo Bobopatch"/>
+                    <nav>
+                        <ul>
+                            <li>Réparation textile</li>
+                            <li>Contact</li>
+                            <li>À propos</li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
             <div id="content">
-                <h1>Bobo patch : réparation textile, couture et création</h1>
-                <p class="justify">
-                    Pourquoi jeter quand on peut réparer ? Avec l'atelier Bobo Patch, donnez une seconde vie
-                    à vos vêtements préférés. Réparation d'accrocs, de déchirures et de trous, pose de pièces
-                    et de patchs, appliques fantaisie, couture, "upcycling"... Mille et une façons de faire
-                    durer !
-                </p>
+                <div class="line space-between">
+                    <div class="column center">
+                        <h2>Pourquoi jeter quand on peut réparer ?</h2>
+                        <p class="justify">
+                            Donnez une seconde vie à vos vêtements, et prenez soin de ce que vous aimez.
+                        </p>
+                        <button class="big">Je demande un devis</button>
+                    </div>
+                    <img id="photo-accueil" src="img/photo-accueil-rect.png" alt="TODO" class="rounded"/>
+                </div>
                 <p>
                     ✉️ <a href="mailto:virginie@bobopatch.fr">virginie@bobopatch.fr</a>
                     <br>
