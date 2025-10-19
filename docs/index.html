@@ -1,251 +1,310 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Bobo Patch, atelier de couture, réparation textile et création">
-        <link rel="apple-touch-icon" sizes="180x180" href="https://bobopatch.fr/img/favicon/apple-touch-icon.png">
-        <link rel="icon" sizes="32x32" href="https://bobopatch.fr/img/favicon/favicon-32x32.png">
-        <link rel="icon" sizes="16x16" href="https://bobopatch.fr/img/favicon/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bobo Patch, atelier de couture, réparation textile et création">
+    <!-- TODO: update -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://bobopatch.fr/img/favicon/apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="https://bobopatch.fr/img/favicon/favicon-32x32.png">
+    <link rel="icon" sizes="16x16" href="https://bobopatch.fr/img/favicon/favicon-16x16.png">
+    <!-- TODO: update -->
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
 
-        <title>Bobo Patch - Réparation textile, couture et création</title>
+    <title>Bobo Patch - Réparation textile, couture et création</title>
 
-        <script type="module">
-            import PhotoSwipeLightbox from './photoswipe-lightbox.esm.min.js';
-            import PhotoSwipe from './photoswipe.esm.min.js';
-            document.addEventListener("DOMContentLoaded", () => {
+    <style>
+        body {
+            margin: 0;
+            line-height: 1.5rem;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
 
-            const lightbox = new PhotoSwipeLightbox({
-            gallery: '#gallery--no-dynamic-import',
-            children: 'a',
-            pswpModule: PhotoSwipe
-            });
+        h1 {
+            line-height: 1.25em;
+        }
 
-            lightbox.init();
-            });
-        </script>
-        <link href="photoswipe.css" rel="stylesheet"/>
+        #banner {
+            background-color: #cea8f0;
+            height: 120px;
 
-        <style>
-            body {
-                margin: 0;
-                line-height: 1.5rem;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            }
-
-            h1 {
-                line-height: 1.25em;
-            }
-
-            #banner {
-                background-color: #cea8f0;
-                height: 120px;
-
-                #banner-content {
-                    padding: 10px;
-                    max-width: 60rem;
-                    margin:  0 auto;
-                    display: flex;
-                    flex-flow: row;
-                    align-items: center;
-                    justify-content: space-between;
-
-
-                    & > img {
-                        height: 100px;
-
-                        /* TODO: fix mobile*/
-                        @media(max-width: 478px) {
-                            height: auto;
-                            width: 100px;
-                        }
-
-                    }
-
-                    & > nav {
-                        margin-right: 20px;
-                        font-size: 1.5rem;
-                        font-weight: bold;
-
-                        /* TODO: fix mobile */
-                        & > ul {
-                            list-style-type: none;
-
-                            & > li {
-                                display: inline-block;
-                            }
-
-                            & > li + li {
-                                margin-left: 1rem;
-                            }
-                        }
-
-                    }
-
-                }
-
-            }
-
-            a {
-                color: #439ec1;
-                cursor: pointer;
-                font-weight: bold;
-                text-decoration: none;
-
-                &:hover {
-                    color: #22bbf5;
-                }
-            }
-
-            #content {
-                margin: 2rem auto;
+            #banner-content {
+                padding: 10px;
                 max-width: 60rem;
-            }
-
-            #photo-accueil {
-                margin-left: 20px;
-                max-height: 300px;
-            }
-
-            ol > li + li {
-                margin-top: 1rem;
-            }
-
-            .thumbnail {
-                width: 150px;
-            }
-
-            .pswp-a {
-                text-decoration: none;
-            }
-
-            .justify {
-                text-align: justify;
-            }
-
-            .line {
+                margin: 0 auto;
                 display: flex;
                 flex-flow: row;
+                align-items: center;
+                /*justify-content: space-between;*/
 
-                &.space-between {
-                    justify-content: space-between;
+
+                & > img {
+                    height: 100px;
+
+                    /* TODO: fix mobile*/
+                    @media (max-width: 478px) {
+                        height: auto;
+                        width: 100px;
+                    }
+
                 }
+
+                & > nav {
+                    margin-right: 20px;
+                    margin-left: 2rem;
+                    font-size: 2.5rem;
+                    /*  TODO: image or import font */
+                    /* TODO: fix mobile */
+                    font-family: Block Berthold;
+                }
+
             }
 
-            .column {
-                display: flex;
+        }
+
+        a {
+            color: #439ec1;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+
+            &:hover {
+                color: #22bbf5;
+            }
+        }
+
+        #content {
+            margin: 2rem auto;
+            max-width: 60rem;
+            padding: 1rem;
+        }
+
+        img.cover {
+            max-width: 100%;
+            object-fit: cover;
+        }
+
+        ol > li + li {
+            margin-top: 1rem;
+        }
+
+        .thumbnail {
+            width: 150px;
+        }
+
+        .pswp-a {
+            text-decoration: none;
+        }
+
+        .justify {
+            text-align: justify;
+        }
+
+        #portrait {
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        .column {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .row-mobile-column {
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            gap: 2rem;
+
+            @media (max-width: 768px) {
                 flex-flow: column;
-                justify-content: center;
-                align-items: start;
             }
 
-            button.big {
-                font-size: 1.5rem;
-                padding: 1rem 2rem;
-                background-color: #cea8f0;
-                border: none;
+            & > * {
+                flex: 1 1;
+                min-width: 200px;
             }
+        }
 
-            img.rounded {
-                border-radius: 20px;
+        #guide-des-prix {
+            font-size: 1.2rem;
+            padding: .8rem 1.5rem;
+            background-color: #cea8f0;
+            border: none;
+            border-radius: 5px;
+            margin: 5px auto;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #dbb9fb;
             }
-        </style>
-    </head>
-    <body>
-        <div id="container">
-            <div id="banner" aria-hidden=true>
-                <div id="banner-content">
-                    <img src="img/logo-bobopatch-bg.png" alt="Logo Bobopatch"/>
-                    <nav>
-                        <ul>
-                            <li>Réparation textile</li>
-                            <li>Contact</li>
-                            <li>À propos</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div id="content">
-                <div class="line space-between">
-                    <div class="column center">
-                        <h2>Pourquoi jeter quand on peut réparer ?</h2>
-                        <p class="justify">
-                            Donnez une seconde vie à vos vêtements, et prenez soin de ce que vous aimez.
-                        </p>
-                        <button class="big">Je demande un devis</button>
-                    </div>
-                    <img id="photo-accueil" src="img/photo-accueil-rect.png" alt="TODO" class="rounded"/>
-                </div>
-                <p>
-                    ✉️ <a href="mailto:virginie@bobopatch.fr">virginie@bobopatch.fr</a>
-                    <br>
-                    📍 Ivry-sur-Seine & alentours
-                </p>
-                <br>
-                <h2>Faire réparer vos vêtements préférés</h2>
-                <ol>
-                    <li>Envoyez un mail à <a href="mailto:virginie@bobopatch.fr">virginie@bobopatch.fr</a>, avec une description simple
-                        du vêtement à réparer, ainsi qu'une photo.</li>
-                    <li>Je vous réponds en envoyant une estimation du prix.</li>
-                    <li>Nous convenons d'un rendez-vous.</li>
-                    <li>Lors de ce rendez-vous, vous venez avec les vêtements (lavés),
-                        et nous les regardons ensemble pour établir le devis définitif.</li>
-                    <li>Une fois la réparation terminée, je vous recontacte pour le retour.</li>
-                </ol>
-                <br>
-                <h2>Quelques exemples de réparation</h2>
-                <div class="pswp-gallery pswp-gallery--single-column" id="gallery--no-dynamic-import">
-                    <a href="img/1_jean.jpg"
-                       data-pswp-height="1024"
-                       data-pswp-width="768"
-                       class="pswp-a"
-                       target="_blank">
-                        <img src="img/1_jean_small.jpg" alt="Image avant-après. Avant: un trou sur un jean, sous un passant de ceinture, de 1 à 2cm de diamètre. Après: le trou reprisé à la machine à coudre, avec un fil de même couleur." class="thumbnail"/>
-                    </a>
-                    <a href="img/2_short.jpg"
-                       data-pswp-height="1024"
-                       data-pswp-width="768"
-                       class="pswp-a"
-                       target="_blank">
-                        <img src="img/2_short_small.jpg" alt="Image avant-après. Avant: une déchirure sur un short en jean, au niveau de l'ourlet, de plus de 5cm de long. Après: la déchirure reprisée de manière invisible." class="thumbnail"/>
-                    </a>
-                    <a href="img/3_remaillage.jpg"
-                       data-pswp-height="1024"
-                       data-pswp-width="768"
-                       class="pswp-a"
-                       target="_blank">
-                        <img src="img/3_remaillage_small.jpg" alt="Image avant-après. Avant: un trou de 4cm sur le coude d'un pull en cachemire bleu. Après: le trou, remaillé, avec une alternance de rangs bleus et verts." class="thumbnail"/>
-                    </a>
-                    <a href="img/4_tshirt.jpg"
-                       data-pswp-height="1024"
-                       data-pswp-width="768"
-                       class="pswp-a"
-                       target="_blank">
-                        <img src="img/4_tshirt_small.jpg" alt="Image avant-après. Avant: un trou de 1cm sur le devant d'un tshirt à larges rayures roses et grises. Après: le trou, remaillé de manière invisible." class="thumbnail"/>
-                    </a>
-                </div>
-                <br>
-                <h2>À propos</h2>
+        }
+
+        img.rounded {
+            border-radius: 20px;
+        }
+
+        table {
+            width: 100%;
+
+            & th {
+                text-align: left;
+            }
+        }
+
+        hr {
+            border: 0;
+            border-top: 4px dashed #cea8f0;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="banner" aria-hidden=true>
+        <div id="banner-content">
+            <img src="img/logo-bobopatch-bg.png" alt="Logo Bobopatch"/>
+            <nav>Réparation textile & retouche</nav>
+        </div>
+    </div>
+    <div id="content">
+        <div class="row-mobile-column">
+            <div class="column center">
+                <h2>Pourquoi jeter quand on peut réparer ?</h2>
                 <p class="justify">
-                    Je suis Virginie Garnier, couturière depuis 2016. Je propose mes services pour
-                    prolonger la vie des vêtements que vous aimez et dont vous souhaitez profiter plus
-                    longtemps.<br>
-                    De la réparation invisible à la réparation créative, beaucoup de choses sont
-                    possibles avant de passer par la case poubelle. Je propose également de récupérer
-                    certaines de vos pièces anciennes pour en faire de nouvelles choses. Mon
-                    "surcyclage" préféré ? La veste matelassée.<br>
-                    Mon atelier se situe à Ivry-sur-Seine. Je me déplace à Ivry, Vitry, Villejuif,
-                    le Kremlin-Bicêtre, Paris 13, Charenton, Alfortville et Maisons-Alfort.
+                    Donnez une seconde vie à vos vêtements, et prenez soin de ce que vous aimez.
                 </p>
+                <p class="justify">
+                    Reprisage, remaillage et patchs:
+                    <br>
+                    À la main ou à la machine, de manière discrète ou tape-à-l'oeil,
+                    toutes les manières sont bonnes pour renforcer le vêtement et y
+                    ramener de la joie.
+                </p>
+            </div>
+            <img class="cover rounded" src="img/photo-accueil-rect.png" alt="TODO"/>
+        </div>
+        <br>
+        <hr/>
+        <br>
+        <div class="row-mobile-column mobile-reverse">
+            <div class="column center">
+                <h2>Réparation discrète ou fantaisie</h2>
+                <p class="justify">
+                    Si vous souhaitez une réparation très peu visible, suivant le type de
+                    vêtement, je peux vous proposer: reprisage machine ou main avec fil
+                    coordonné, pose de patch ton sur ton, remaillage avec la laine du pull...
+                </p>
+                <p class="justify">
+                    Team créatif·ve, je vous porpose des patchs de couleur, des broderies
+                    façon sashiko, des reprisages à motifs...
+                </p>
+
+            </div>
+            <img class="cover rounded" src="img/reparation-invisible.jpg" alt="TODO"/>
+
+        </div>
+        <br>
+        <br>
+        <div class="row-mobile-column">
+            <img class="cover rounded" src="img/reparation-visible.jpg" alt="TODO"/>
+            <div class="column center">
+                <h2>
+                    Quelques exemples de prix:
+                </h2>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>Couture défaite</td>
+                        <td>À partir de 12€*</td>
+                    </tr>
+                    <tr>
+                        <td>Pose de patch</td>
+                        <td>À partir de 22€*</td>
+                    </tr>
+                    <tr>
+                        <td>Remaillage</td>
+                        <td>À partir de 30€*</td>
+                    </tr>
+                    <tr>
+                        <td>Changement de zip</td>
+                        <td>À partir de 33€**</td>
+                    </tr>
+                    <tr>
+                        <td>Poignets, cols, ...</td>
+                        <td>Sur devis</td>
+                    </tr>
+                    <tr>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                    </tbody>
+                </table>
                 <p>
-                    <strong>Contact :</strong>
-                    <a href="mailto:virginie@bobopatch.fr">virginie@bobopatch.fr</a>
+                    <i>* Bonus réparation 6 à 8€</i>
+                    <br>
+                    <i>** Bonus réparation 15€</i>
                 </p>
-                <br>
+                <button id="guide-des-prix">Guide des prix (pdf)</button>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row-mobile-column">
+            <div class="column center">
+                <h2>Contact</h2>
+                <p class="justify">
+                    <b>✉️ Email:</b> <span>virginie@bobopatch.fr</span>
+                    <br>
+                    <b>📍 Adresse:</b> <span>13 rue Santeuil, Paris 5</span>
+                    <br>
+                    <b>📱 Téléphone:</b> <span>06 52 79 34 75</span>
+                    <br>
+                    <b>🕐 Horaires:</b> <span>Lu-Ma-Je-Ve, 9h-16h, sur rendez-vous</span>
+                </p>
+            </div>
+            <div class="column center">
+                TODO: formulaire
+                S'il s'agit d'une demande de réparation, merci de préciser le type de vêtement,
+                le problème (trou, déchirure, tache, zip cassé, ...), ainsi que la zone où il
+                se situe.
+                <!-- TODO -->
+                <!-- Nom -->
+                <!-- Prénom -->
+                <!-- Mail -->
+                <!-- Description -->
 
             </div>
         </div>
-    </body>
+
+        <div class="row-mobile-column mobile-reverse">
+            <img class="cover rounded" id="portrait" src="img/portrait.jpg" alt="TODO"/>
+
+            <div>
+                <h2>À propos</h2>
+                <p class="justify">
+                    Je suis Virginie Beernaert, et j'ai créé Bobopatch en 2024, pour permettre à des
+                    personnes qui ne cousent pas de faire durer leurs vêtements dans le temps. Titulaire
+                    du CAP métiers de la mode et vêtement flou, je me suis formée et continue de me former
+                    à des techniques de réparation auprès de personnes expertes dans le domaine.
+                    <br>
+                    <br>
+                    Mon but est de vous proposer la réparation la plus durable possible et la plus conforme
+                    à vos goûts, selon que vous vouliez qu'elle soit visible et remarquée ou au contraire,
+                    très discrète. Que vous aimiez votre vêtement réparé est ce qui me tient à coeur.
+                </p>
+            </div>
+
+
+            <!--                <p>-->
+            <!--                    ✉️ <a href="mailto:virginie@bobopatch.fr">virginie@bobopatch.fr</a>-->
+            <!--                    <br>-->
+            <!--                    📍 Ivry-sur-Seine & alentours-->
+            <!--                </p>-->
+        </div>
+    </div>
+</div>
+</body>
 </html>
