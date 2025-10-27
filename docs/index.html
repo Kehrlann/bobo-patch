@@ -4,17 +4,25 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Bobo Patch, atelier de couture, réparation textile et création">
-    <!-- TODO: update -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://bobopatch.fr/img/favicon/apple-touch-icon.png">
     <link rel="icon" sizes="32x32" href="https://bobopatch.fr/img/favicon/favicon-32x32.png">
     <link rel="icon" sizes="16x16" href="https://bobopatch.fr/img/favicon/favicon-16x16.png">
-    <!-- TODO: update -->
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
 
     <title>Bobo Patch - Réparation textile, couture et création</title>
 
     <style>
+        @font-face {
+            font-family: "Block Berthold";
+            src: local("Block Berthold"),
+            url("fonts/blockberthold.otf") format("opentype")
+        }
+
+        h1, h2, h3, h4 {
+            font-family: "Block Berthold", sans-serif;
+            font-weight: normal;
+        }
+
         body {
             margin: 0;
             line-height: 1.5rem;
@@ -25,85 +33,48 @@
             line-height: 1.25em;
         }
 
-        #banner {
-            background-color: #cea8f0;
-            height: 120px;
-
-            #banner-content {
-                padding: 10px;
-                max-width: 60rem;
-                margin: 0 auto;
-                display: flex;
-                flex-flow: row;
-                align-items: center;
-                /*justify-content: space-between;*/
-
-
-                & > img {
-                    height: 100px;
-
-                    /* TODO: fix mobile*/
-                    @media (max-width: 478px) {
-                        height: auto;
-                        width: 100px;
-                    }
-
-                }
-
-                & > nav {
-                    margin-right: 20px;
-                    margin-left: 2rem;
-                    font-size: 2.5rem;
-                    /*  TODO: image or import font */
-                    /* TODO: fix mobile */
-                    font-family: Block Berthold;
-                }
-
-            }
-
-        }
-
         a {
-            color: #439ec1;
+            color: #cea8f0;
             cursor: pointer;
             font-weight: bold;
             text-decoration: none;
 
             &:hover {
-                color: #22bbf5;
+                color: #dbb9fb;
             }
         }
 
-        #content {
-            margin: 2rem auto;
-            max-width: 60rem;
-            padding: 1rem;
+
+        img {
+            &.cover {
+                max-width: 100%;
+                object-fit: cover;
+            }
+
+            &.rounded {
+                border-radius: 20px;
+            }
         }
 
-        img.cover {
-            max-width: 100%;
-            object-fit: cover;
+        table {
+            width: 100%;
+
+            & th {
+                text-align: left;
+            }
         }
 
-        ol > li + li {
-            margin-top: 1rem;
-        }
-
-        .thumbnail {
-            width: 150px;
-        }
-
-        .pswp-a {
-            text-decoration: none;
+        hr {
+            border: 0;
+            border-top: 4px dashed #cea8f0;
         }
 
         .justify {
             text-align: justify;
         }
 
-        #portrait {
-            max-height: 400px;
-            object-fit: contain;
+        .center {
+            text-align: center;
         }
 
         .column {
@@ -119,6 +90,10 @@
             align-items: center;
             gap: 2rem;
 
+            &.align-top {
+                align-items: start;
+            }
+
             @media (max-width: 768px) {
                 flex-flow: column;
             }
@@ -127,15 +102,65 @@
                 flex: 1 1;
                 min-width: 200px;
             }
+
+            &.mobile-reverse {
+                @media (max-width: 478px) {
+                    flex-direction: column-reverse;
+                }
+            }
         }
 
-        #guide-des-prix {
+
+        #banner {
+            background-color: #cea8f0;
+            height: 120px;
+
+            #banner-content {
+                padding: 10px;
+                max-width: 60rem;
+                margin: 0 auto;
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+
+                & > img {
+                    height: 100px;
+                    @media (max-width: 478px) {
+                        height: auto;
+                        width: 100px;
+                    }
+
+                }
+
+                & > nav {
+                    margin-right: 20px;
+                    margin-left: 2rem;
+                    font-size: 2.5rem;
+                    line-height: 2.5rem;
+                    font-family: "Block Berthold", sans-serif;
+                    @media (max-width: 478px) {
+                        font-size: 2rem;
+                        line-height: 2rem;
+                    }
+                }
+
+            }
+
+        }
+
+        #content {
+            margin: 2rem auto;
+            max-width: 60rem;
+            padding: 1rem;
+        }
+
+        button {
             font-size: 1.2rem;
             padding: .8rem 1.5rem;
             background-color: #cea8f0;
             border: none;
             border-radius: 5px;
-            margin: 5px auto;
+            margin-top: 1rem;
             cursor: pointer;
 
             &:hover {
@@ -143,22 +168,66 @@
             }
         }
 
-        img.rounded {
-            border-radius: 20px;
+        #guide-des-prix {
+            margin: 5px auto;
         }
 
-        table {
+        #portrait {
+            max-height: 400px;
+            margin: auto 0;
+            object-fit: contain;
+        }
+
+        #contact-form {
+            gap: 0.5rem;
             width: 100%;
 
-            & th {
-                text-align: left;
+            & label {
+                margin-top: 0.5rem;
+                font-weight: bold;
             }
+
+
+            & input,
+            & textarea {
+                padding: 0.5rem;
+                border: 2px solid #cea8f0;
+                border-radius: 5px;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.5rem;
+                min-width: 300px;
+
+                &:focus {
+                    outline: none;
+                    border-color: #dbb9fb;
+                }
+
+                &:invalid:not(:focus):not(:placeholder-shown) {
+                    border-color: #e74c3c;
+                }
+
+                &:user-invalid {
+                    border-color: #e74c3c;
+                }
+            }
+
+            & button {
+                font-size: 1.2rem;
+                padding: .8rem 1.5rem;
+                background-color: #cea8f0;
+                border: none;
+                border-radius: 5px;
+                margin-top: 1rem;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #dbb9fb;
+                }
+            }
+
         }
 
-        hr {
-            border: 0;
-            border-top: 4px dashed #cea8f0;
-        }
     </style>
 </head>
 <body>
@@ -171,7 +240,7 @@
     </div>
     <div id="content">
         <div class="row-mobile-column">
-            <div class="column center">
+            <div class="column">
                 <h2>Pourquoi jeter quand on peut réparer ?</h2>
                 <p class="justify">
                     Donnez une seconde vie à vos vêtements, et prenez soin de ce que vous aimez.
@@ -189,8 +258,8 @@
         <br>
         <hr/>
         <br>
-        <div class="row-mobile-column mobile-reverse">
-            <div class="column center">
+        <div class="row-mobile-column">
+            <div class="column">
                 <h2>Réparation discrète ou fantaisie</h2>
                 <p class="justify">
                     Si vous souhaitez une réparation très peu visible, suivant le type de
@@ -210,7 +279,7 @@
         <br>
         <div class="row-mobile-column">
             <img class="cover rounded" src="img/reparation-visible.jpg" alt="TODO"/>
-            <div class="column center">
+            <div class="column">
                 <h2>
                     Quelques exemples de prix:
                 </h2>
@@ -252,8 +321,8 @@
         </div>
         <br>
         <hr>
-        <div class="row-mobile-column">
-            <div class="column center">
+        <div class="row-mobile-column align-top">
+            <div class="column">
                 <h2>Contact</h2>
                 <p class="justify">
                     <b>✉️ Email:</b> <span>virginie@bobopatch.fr</span>
@@ -263,24 +332,38 @@
                     <b>📱 Téléphone:</b> <span>06 52 79 34 75</span>
                     <br>
                     <b>🕐 Horaires:</b> <span>Lu-Ma-Je-Ve, 9h-16h, sur rendez-vous</span>
+                    <br>
+                    <b>📸 Insta:</b> <a href="https://www.instagram.com/virginie_reparation/" target="_blank"
+                                       rel="noopener">@virginie_reparation</a>
                 </p>
             </div>
-            <div class="column center">
-                TODO: formulaire
-                S'il s'agit d'une demande de réparation, merci de préciser le type de vêtement,
-                le problème (trou, déchirure, tache, zip cassé, ...), ainsi que la zone où il
-                se situe.
-                <!-- TODO -->
-                <!-- Nom -->
-                <!-- Prénom -->
-                <!-- Mail -->
-                <!-- Description -->
+            <div class="column">
+                <h2>Demande de devis</h2>
+                <p class="justify">S'il s'agit d'une demande de réparation, merci de préciser le type de vêtement,
+                    le problème (trou, déchirure, tache, zip cassé, ...), ainsi que la zone où il
+                    se situe.
+                </p>
+                <form action="https://formspree.io/f/xwpwvrvv" method="POST" class="column" id="contact-form">
+                    <label for="contact-nom">Votre nom:</label>
+                    <input type="text" placeholder="Madame Dupont" name="contact-nom" id="contact-nom" required/>
+                    <label for="contact-email">Votre email:</label>
+                    <input type="email" placeholder="dupont@example.com" name="contact-email" id="contact-email"
+                           required/>
+                    <label for="contact-description">Description:</label>
+                    <textarea name="contact-description" id="contact-description" rows="2"
+                              placeholder="Genou troué sur un jean, 2cm de diamètre" required></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
 
             </div>
         </div>
+        <br>
+        <br>
 
         <div class="row-mobile-column mobile-reverse">
-            <img class="cover rounded" id="portrait" src="img/portrait.jpg" alt="TODO"/>
+            <div class="center">
+                <img class="cover rounded" id="portrait" src="img/portrait.jpg" alt="TODO"/>
+            </div>
 
             <div>
                 <h2>À propos</h2>
@@ -296,13 +379,6 @@
                     très discrète. Que vous aimiez votre vêtement réparé est ce qui me tient à coeur.
                 </p>
             </div>
-
-
-            <!--                <p>-->
-            <!--                    ✉️ <a href="mailto:virginie@bobopatch.fr">virginie@bobopatch.fr</a>-->
-            <!--                    <br>-->
-            <!--                    📍 Ivry-sur-Seine & alentours-->
-            <!--                </p>-->
         </div>
     </div>
 </div>
