@@ -48,7 +48,8 @@
         img {
             &.cover {
                 max-width: 100%;
-                object-fit: cover;
+                max-height: 400px;
+                object-fit: contain;
             }
 
             &.rounded {
@@ -262,7 +263,9 @@
                     ramener de la joie.
                 </p>
             </div>
-            <img class="cover rounded" src="img/photo-accueil-rect.png" alt="TODO"/>
+            <div class="center">
+                <img class="cover rounded" src="img/photo-accueil-rect.png" alt="TODO"/>
+            </div>
         </div>
         <br>
         <hr/>
@@ -281,13 +284,16 @@
                 </p>
 
             </div>
-            <img class="cover rounded" src="img/reparation-invisible.jpg" alt="TODO"/>
-
+            <div class="center">
+                <img class="cover rounded" src="img/reparation-invisible.jpg" alt="TODO"/>
+            </div>
         </div>
         <br>
         <br>
         <div class="row-mobile-column">
-            <img class="cover rounded" src="img/reparation-visible.jpg" alt="TODO"/>
+            <div class="center">
+                <img class="cover rounded" src="img/reparation-visible.jpg" alt="TODO"/>
+            </div>
             <div class="column">
                 <h2>
                     Quelques exemples de prix:
