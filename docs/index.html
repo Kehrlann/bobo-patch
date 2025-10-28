@@ -154,7 +154,10 @@
             padding: 1rem;
         }
 
-        button {
+        button, [role=button] {
+            text-decoration: none;
+            color: black;
+            font-weight: normal;
             font-size: 1.2rem;
             padding: .8rem 1.5rem;
             background-color: #cea8f0;
@@ -165,6 +168,7 @@
 
             &:hover {
                 background-color: #dbb9fb;
+                color: black;
             }
         }
 
@@ -316,7 +320,8 @@
                     <br>
                     <i>** Bonus réparation 15€</i>
                 </p>
-                <button id="guide-des-prix">Guide des prix (pdf)</button>
+                <a href="bobopatch-prix-oct2025.pdf" download="bobopatch-prix-oct2025.pdf" id="guide-des-prix"
+                   role="button">Guide des prix (pdf)</a>
             </div>
         </div>
         <br>
@@ -350,7 +355,7 @@
                     <input type="email" placeholder="dupont@example.com" name="contact-email" id="contact-email"
                            required/>
                     <label for="contact-description">Description:</label>
-                    <textarea name="contact-description" id="contact-description" rows="2"
+                    <textarea name="contact-description" id="contact-description" rows="3"
                               placeholder="Genou troué sur un jean, 2cm de diamètre" required></textarea>
                     <button type="submit">Envoyer</button>
                 </form>
